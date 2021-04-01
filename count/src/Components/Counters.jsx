@@ -10,13 +10,31 @@ class Counters extends Component {
         ]
      }
     handelIncrement = (counter) =>{
-        this.setState({ counters: this.state.counters[counter.id-1].value=counter.value+1 });
+        const counters = [...this.state.counters]
+        const index = counters.indexOf(counter)
+        counters[index].value++
+        this.setState({counters})
     }
-    handelDecrement = () =>{
-        this.setState({value : this.state.counters.value - 1})
+    handelDecrement = (counter) =>{
+        const counters = [...this.state.counters]
+        const index = counters.indexOf(counter)
+        counters[index].value--
+        this.setState({counters})
     }
-    handelReset = () =>{
-        this.setState({value : 0})   
+    handelReset = (counter) =>{
+        const counters = [...this.state.counters]
+        const index = counters.indexOf(counter)
+        counters[index].value = 0
+        this.setState({counters})  
+    }
+    handleDelete = (counter) =>{
+        const counters = this.state.counters.filter(c => c.id !== counter.id)
+        this.setState({counters})
+    }
+    handleAdd = (counters) => {
+        let size = counters.length;
+        const counter = this.state.counters.push({id : size+1, value : 0})
+        this.setState({counter})
     }
     render() { 
         return ( 
