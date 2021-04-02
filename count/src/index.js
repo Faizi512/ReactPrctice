@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Counters from './Components/Counters';
+import FunCounter from './Components/FunCompCounter';
+import ApiCall from './Components/ApiCall';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Counters />
+    <FunCounter/>
+    <ApiCall />
   </React.StrictMode>,
   document.getElementById('root')
 );
