@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import FetchCall from './Components/FetchCall'
 import AxiosCall from './Components/AxiosCall'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <AxiosCall />
+    <FetchCall />
   </React.StrictMode>,
   document.getElementById('root')
 );
